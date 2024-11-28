@@ -1,0 +1,60 @@
+config:
+  credentials: []
+  project_repos:
+    github.com/EGI-Federation/eosc-data-transfer:
+      branch: main
+      repo: https://github.com/EGI-Federation/eosc-data-transfer
+    github.com/EOSC-synergy/sqaaas-tooling:
+      branch: main
+      repo: https://github.com/EOSC-synergy/sqaaas-tooling
+environment:
+  JPL_DOCKERFORCEBUILD: enabled
+  JPL_KEEPGOING: enabled
+sqa_criteria:
+  QC.Acc:
+    repos:
+      github.com/EGI-Federation/eosc-data-transfer git:
+        commands:
+        - /usr/bin/env sh .sqa/script.snoopy-ivory-dachshund.sh
+        container: qc.acc_blurry-charcoal-angora
+  QC.Doc:
+    repos:
+      github.com/EGI-Federation/eosc-data-transfer find_doc_files.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.surly-gamboge-hummingbird.sh
+        container: qc.doc_stealthy-carmine-markhor
+      github.com/EGI-Federation/eosc-data-transfer git:
+        commands:
+        - /usr/bin/env sh .sqa/script.gummy-olivine-peccary.sh
+        container: qc.doc_cheeky-plum-frog
+      github.com/EGI-Federation/eosc-data-transfer markdownlint:
+        commands:
+        - /usr/bin/env sh .sqa/script.blurry-pumpkin-hummingbird.sh
+        container: qc.doc_homely-aquamarine-ostrich
+  QC.Lic:
+    repos:
+      github.com/EGI-Federation/eosc-data-transfer licensee:
+        commands:
+        - /usr/bin/env sh .sqa/script.shabby-olive-tapir.sh
+        container: qc.lic_homely-heliotrope-reindeer
+  QC.Sty:
+    repos:
+      github.com/EGI-Federation/eosc-data-transfer checkstyle:
+        commands:
+        - /usr/bin/env sh .sqa/script.ready-white-discus.sh
+        container: qc.sty_scummy-ultramarine-dugong
+      github.com/EGI-Federation/eosc-data-transfer hadolint:
+        commands:
+        - /usr/bin/env sh .sqa/script.stinky-ochre-hedgehog.sh
+        container: qc.sty_skimpy-khaki-booby
+      github.com/EGI-Federation/eosc-data-transfer jsonlint:
+        commands:
+        - /usr/bin/env sh .sqa/script.queasy-carmine-lemur.sh
+        container: qc.sty_crappy-mauve-forest
+  QC.Ver:
+    repos:
+      github.com/EGI-Federation/eosc-data-transfer get_git_tags.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.flimsy-grey-cow.sh
+        container: qc.ver_sleazy-ruby-discus
+timeout: 5400
