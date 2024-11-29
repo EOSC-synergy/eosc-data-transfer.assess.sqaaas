@@ -15,46 +15,52 @@ sqa_criteria:
     repos:
       github.com/EGI-Federation/eosc-data-transfer git:
         commands:
-        - /usr/bin/env sh .sqa/script.snoopy-ivory-dachshund.sh
-        container: qc.acc_blurry-charcoal-angora
+        - /usr/bin/env sh .sqa/script.nerdy-magenta-urchin.sh
+        container: qc.acc_breezy-thistle-hare
   QC.Doc:
     repos:
       github.com/EGI-Federation/eosc-data-transfer find_doc_files.py:
         commands:
-        - /usr/bin/env sh .sqa/script.surly-gamboge-hummingbird.sh
-        container: qc.doc_stealthy-carmine-markhor
+        - /usr/bin/env sh .sqa/script.muzzy-sapphire-armadillo.sh
+        container: qc.doc_droopy-harlequin-gerbil
       github.com/EGI-Federation/eosc-data-transfer git:
         commands:
-        - /usr/bin/env sh .sqa/script.gummy-olivine-peccary.sh
-        container: qc.doc_cheeky-plum-frog
+        - /usr/bin/env sh .sqa/script.sleazy-indigo-earwig.sh
+        container: qc.doc_gamy-orchid-sparrow
       github.com/EGI-Federation/eosc-data-transfer markdownlint:
         commands:
-        - /usr/bin/env sh .sqa/script.blurry-pumpkin-hummingbird.sh
-        container: qc.doc_homely-aquamarine-ostrich
+        - /usr/bin/env sh .sqa/script.snoopy-beige-beagle.sh
+        container: qc.doc_woolly-vermilion-giraffe
   QC.Lic:
     repos:
       github.com/EGI-Federation/eosc-data-transfer licensee:
         commands:
-        - /usr/bin/env sh .sqa/script.shabby-olive-tapir.sh
-        container: qc.lic_homely-heliotrope-reindeer
+        - /usr/bin/env sh .sqa/script.gummy-ruby-jellyfish.sh
+        container: qc.lic_wiggy-mauve-liger
+  QC.Met:
+    repos:
+      github.com/EGI-Federation/eosc-data-transfer cff-converter-python:
+        commands:
+        - /usr/bin/env sh .sqa/script.sickly-firebrick-llama.sh
+        container: qc.met_skanky-asparagus-chimpanzee
   QC.Sty:
     repos:
       github.com/EGI-Federation/eosc-data-transfer checkstyle:
         commands:
-        - /usr/bin/env sh .sqa/script.ready-white-discus.sh
-        container: qc.sty_scummy-ultramarine-dugong
+        - /usr/bin/env sh .sqa/script.scanty-rust-fossa.sh
+        container: qc.sty_paltry-zucchini-albatross
       github.com/EGI-Federation/eosc-data-transfer hadolint:
         commands:
-        - /usr/bin/env sh .sqa/script.stinky-ochre-hedgehog.sh
-        container: qc.sty_skimpy-khaki-booby
+        - /usr/bin/env sh .sqa/script.blurry-rose-termite.sh
+        container: qc.sty_shaggy-lemon-chipmunk
       github.com/EGI-Federation/eosc-data-transfer jsonlint:
         commands:
-        - /usr/bin/env sh .sqa/script.queasy-carmine-lemur.sh
-        container: qc.sty_crappy-mauve-forest
+        - /usr/bin/env sh .sqa/script.slaphappy-linen-mist.sh
+        container: qc.sty_bluesy-ultramarine-dolphin
   QC.Ver:
     repos:
       github.com/EGI-Federation/eosc-data-transfer get_git_tags.py:
         commands:
-        - /usr/bin/env sh .sqa/script.flimsy-grey-cow.sh
-        container: qc.ver_sleazy-ruby-discus
+        - /usr/bin/env sh .sqa/script.snoopy-fuchsia-heron.sh
+        container: qc.ver_breezy-auburn-wolfhound
 timeout: 5400
